@@ -1,0 +1,776 @@
+.Section-Profile-Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.Section-Profile-List {
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    height: 80vh;
+    background-color: transparent;
+    z-index: 900;
+    overflow-y: scroll; /* Cho phép cuộn */
+    padding-top: 20px;
+    box-sizing: border-box;
+
+    /* Ẩn thanh cuộn cho Chrome, Safari và Opera */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+}
+
+.Section-Profile-List::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+
+/* Edit Profile Section Styles */
+.Section-Profile-Edit {
+  width: 80%;
+  max-width: 600px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Popular Features Section Styles */
+.Section-Profile-Features {
+  width: 80%;
+  max-width: 600px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.Section-Profile-Features h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.Section-Profile-FeaturesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.Section-Profile-FeatureCard {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.Section-Profile-FeatureCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.Section-Profile-FeatureCard h3 {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Additional Features Section */
+.Section-Profile-AdditionalFeatures {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  gap: 10px;
+}
+
+/* DISCOVER */
+.Section-Discover-Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.Section-Discover-List {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    height: 85vh;
+    background-color: transparent;
+    z-index: 900;
+    overflow-y: auto;
+    padding-top: 0px;
+    box-sizing: border-box;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+}
+
+.Section-Discover-List::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+/* Search Bar */
+.Section-Discover-SearchBar {
+    width: 90%;
+    display: flex;
+    margin: 0;
+    position: sticky;
+    top: -2px; 
+    background-color: #fff; /* nền trắng */
+    z-index: 1000;
+    padding: 5px 0;
+    border: 15px solid #ffffff; 
+    border-radius: 8px;
+}
+
+.Section-Discover-SearchInput {
+    flex: 1;
+    padding: 8px;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid #ccc;
+    color: #000; /* chữ đen */
+}
+
+.Section-Discover-SearchButton {
+    padding: 8px 15px;
+    border-radius: 0 5px 5px 0;
+    border: 1px solid #A30023; /* viền màu chủ đạo */
+    background-color: #A30023; /* nền trắng */
+    color: #fff; /* chữ đen */
+    cursor: pointer;
+}
+
+.Section-Discover-SearchButton:hover {
+    background-color: #7a0017; /* nhấn nhẹ */
+}
+
+/* Ranking Section */
+.Section-Discover-RankingContainer,
+.Section-Discover-RecommendContainer {
+    width: 80%;
+    max-width: 600px;
+    background-color: #ffffff; /* nền trắng */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.Section-Discover-RankingContainer h2,
+.Section-Discover-RecommendContainer h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333;
+    text-align: center;
+}
+
+.Section-Discover-RankingList {
+    max-width: 500px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.Section-Discover-RankingItem {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    font-size: 1rem;
+    color: #000; /* chữ đen */
+}
+
+.Section-Discover-RankingItem:last-child {
+    border-bottom: none;
+}
+
+.Section-Discover-BrandName {
+    color: #A30023; /* màu chủ đạo */
+    font-weight: 600;
+}
+
+.Section-Discover-LikeCount {
+    color: #888;
+}
+
+/* Recommended Brand Section */
+.Section-Discover-RecommendCard {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.Section-Discover-RecommendImage {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.Section-Discover-RecommendInfo {
+    flex: 1;
+}
+
+.Section-Discover-RecommendInfo h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #000; /* chữ đen */
+}
+
+.Section-Discover-RecommendInfo p {
+    font-size: 0.9rem;
+    color: #000; /* chữ đen */
+    margin-bottom: 10px;
+}
+
+/* Explore Button */
+.Section-Discover-ExploreButton {
+    background-color: #A30023; /* nền chủ đạo */
+    color: #ffffff; /* chữ trắng */
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.Section-Discover-ExploreButton:hover {
+    background-color: #7a0017; /* nhấn tối hơn */
+}
+
+/* Chat */
+.Section-Chat-Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.Section-Chat-List {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;           /* full width theo phần tử cha */
+    height: 85vh;
+    background-color: transparent;
+    z-index: 900;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.Section-Chat-SearchBar {
+    width: 90%;
+    display: flex;
+    margin: 0;
+    position: sticky;
+    top: -2px; 
+    background-color: #fff; /* nền trắng */
+    z-index: 1000;
+    padding: 5px 0;
+    border: 15px solid #ffffff; 
+    border-radius: 8px;
+}
+
+.Section-Chat-SearchInput {
+    flex: 1;
+    padding: 8px;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid #ccc;
+    color: #000; /* chữ đen */
+}
+
+.Section-Chat-SearchButton {
+    padding: 8px 15px;
+    border-radius: 0 5px 5px 0;
+    border: 1px solid #A30023; /* viền màu chủ đạo */
+    background-color: #A30023; /* nền trắng */
+    color: #fff; /* chữ đen */
+    cursor: pointer;
+}
+
+.Section-Chat-SearchButton:hover {
+    background-color: #7a0017; /* nhấn nhẹ */
+}
+
+.Section-Chat-Item {
+  display: flex;
+  align-items: center;
+  width: 85%;
+  max-width: 400px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.Section-Chat-Item:hover {
+  background-color: #f0f2f5;
+}
+
+.Section-Chat-Avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin-right: 10px;
+}
+
+.Section-Chat-Avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.Section-Chat-Info {
+  flex: 1;
+}
+
+.Section-Chat-Name {
+    text-align: left;
+  font-weight: bold;
+  font-size: 16px;
+  color: #A30023; /* tên chat dùng màu chủ đạo */
+}
+
+.Section-Chat-LastMessage {
+    text-align: left;
+  color: #65676b;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+.Section-Chat-Meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.Section-Chat-Timestamp {
+  font-size: 12px;
+  color: #65676b;
+}
+
+.Section-Chat-UnreadDot {
+  width: 10px;
+  height: 10px;
+  background-color: #A30023;
+  border-radius: 50%;
+}
+
+/* Section-Academy */
+.Section-Academy-Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.Section-Academy-List {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    height: 85vh;
+    background-color: transparent;
+    overflow-y: auto;
+    box-sizing: border-box;
+
+    /* Ẩn thanh cuộn */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+}
+
+.Section-Academy-List::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+/* Search Bar */
+.Section-Academy-SearchBar {
+    width: 90%;
+    display: flex;
+    margin: 0;
+    position: sticky;
+    top: -2px; 
+    background-color: #fff; /* nền trắng */
+    z-index: 1000;
+    padding: 5px 0;
+    border: 15px solid #ffffff; 
+    border-radius: 8px;
+}
+
+.Section-Academy-SearchInput {
+    flex: 1;
+    padding: 8px;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid #ccc;
+    color: #000; /* chữ đen */
+}
+
+.Section-Academy-SearchButton {
+    padding: 8px 15px;
+    border-radius: 0 5px 5px 0;
+    border: 1px solid #A30023; /* viền màu chủ đạo */
+    background-color: #A30023; /* nền trắng */
+    color: #fff; /* chữ đen */
+    cursor: pointer;
+}
+
+.Section-Academy-SearchButton:hover {
+    background-color: #7a0017; /* nhấn nhẹ */
+}
+
+/* Class Box */
+.Section-Academy-Box {
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+}
+
+.Section-Academy-Image {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 0px;
+}
+
+.Section-Academy-Box h3 {
+    margin: 10px 0;
+    font-size: 1.5em;
+}
+
+.Section-Academy-Box p {
+    margin: 0 0 15px 0;
+    color: #555;
+}
+
+.Section-Academy-EnrollButton {
+    background-color: #a30023;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.Section-Academy-EnrollButton:hover {
+    background-color: #4d0011;
+}
+
+.Section-homeForSupplier-Edit {
+  width: 80%;
+  max-width: 600px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Popular Features Section Styles */
+.Section-homeForSupplier-Features {
+  width: 100%;
+  color: #A30023;
+}
+
+.Section-homeForSupplier-Features h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.Section-homeForSupplier-FeaturesGrid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 15px;
+}
+
+.Section-homeForSupplier-FeatureCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 90%;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-sizing: border-box;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  padding: 12px 12px;
+  margin: 0 auto;
+
+  /* Thêm bóng */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.Section-homeForSupplier-FeatureCard .title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.Section-homeForSupplier-FeatureCard .value {
+  font-size: 1rem;
+  font-weight: bold;
+  color: rgba(163, 0, 35, 1); /*355E3B*/
+  align-self: flex-end; /* đẩy số liệu sang phải */
+}
+
+.Section-homeForSupplier-FeatureCard:hover {
+  transform: scale(1.01) translateY(-5px);
+  box-shadow: 0 4px 12px rgba(163, 0, 35, 0.5);
+}
+
+.Section-homeForSupplier-FeatureCard h3 {
+  font-size: 1rem;
+  color: #333;
+}
+
+.Section-homeForSupplier-FeatureCard.PremiumCard:hover {
+    background-color: rgba(163, 0, 35, 0.1);
+}
+.Section-homeForSupplier-FeatureCard.no-hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.Section-homeForSupplier-FeatureCard.no-hover:hover {
+    transform: none !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+/* Additional Features Section */
+.Section-homeForSupplier-AdditionalFeatures {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  gap: 10px;
+}
+
+.Section-Premium-Edit {
+  width: 80%;
+  max-width: 600px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Popular Features Section Styles */
+.Section-Premium-Features {
+  width: 100%;
+  color: #A30023;
+}
+
+.Section-Premium-Features h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.Section-Premium-FeaturesGrid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 15px;
+}
+
+.Section-Premium-FeatureCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 90%;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-sizing: border-box;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  padding: 12px 12px;
+  margin: 0 auto;
+
+  /* Thêm bóng */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.Section-Premium-FeatureCard .title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.Section-Premium-FeatureCard .value {
+  font-size: 1rem;
+  font-weight: bold;
+  color: rgba(163, 0, 35, 1); /*355E3B*/
+  align-self: flex-end; /* đẩy số liệu sang phải */
+}
+
+.Section-Premium-FeatureCard:hover {
+  transform: scale(1.01) translateY(-5px);
+  box-shadow: 0 4px 12px rgba(163, 0, 35, 0.5);
+}
+
+.Section-Premium-FeatureCard h3 {
+  font-size: 1rem;
+  color: #333;
+}
+
+.Section-Premium-FeatureCard.PremiumCard:hover {
+    background-color: rgba(163, 0, 35, 0.1);
+}
+
+.Section-Premium-FeatureCard.no-hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.Section-Premium-FeatureCard.no-hover:hover {
+    transform: none !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Additional Features Section */
+.Section-Premium-AdditionalFeatures {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  gap: 10px;
+}
+
+.Section-Premium-BoxList {
+  display: flex;                 
+  gap: 15px;                     
+  overflow-x: auto;              
+  overflow-y: hidden;            /* ẩn thanh cuộn dọc */
+  padding: 10px 10px;
+  scroll-behavior: smooth;
+
+  /* Ẩn thanh cuộn cho Webkit (Chrome, Safari) */
+  -webkit-scrollbar {
+    display: none;
+  }
+
+  /* Ẩn thanh cuộn cho Firefox */
+  scrollbar-width: none; 
+}
+
+.Section-Premium-BoxList::-webkit-scrollbar {
+  height: 8px;                   /* độ cao scrollbar */
+}
+
+.Section-Premium-BoxList::-webkit-scrollbar-thumb {
+  background-color: rgba(163, 0, 35, 0.5);
+  border-radius: 4px;
+}
+
+.Section-Premium-BoxList::-webkit-scrollbar-track {
+  background-color: #f0f0f0;
+  border-radius: 4px;
+}
+
+.Section-Premium-Box {
+  flex: 0 0 auto;                /* giữ kích thước cố định */
+  width: 100px;
+  height: 70px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.Section-Premium-Box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(163, 0, 35, 0.3);
+  cursor: pointer;
+}
+
+.Section-Premium-SignCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  border-radius: 8px;
+  box-sizing: border-box;
+  position: relative;
+  padding: 12px 12px;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #fff;
+
+  /* Animation zoom in – zoom out */
+  animation: zoomLoop 2s ease-in-out infinite;
+
+  /* Linear gradient 3 màu liên quan #A30023 */
+  background: linear-gradient(135deg, #660018 0%, #A30023 50%, #FF6B6B 100%);
+}
+
+@keyframes zoomLoop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.sign-btn {
+    border-radius: 12px; 
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #fff;
+
+    /* Gradient 3 màu liên quan #A30023 */
+    background: linear-gradient(135deg, #660018 0%, #A30023 50%, #FF6B6B 100%);
+
+    /* Giữ chiều dài chiều rộng như nút gốc */
+    width: auto;  /* hoặc giữ width hiện tại */
+    height: auto; /* giữ chiều cao hiện tại */
+
+    /* Animation zoom in – zoom out */
+    animation: zoomBtn 2s ease-in-out infinite;
+
+    /* Thêm shadow nhẹ */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.sign-btn:hover {
+    box-shadow: 0 6px 16px rgba(163, 0, 35, 0.5);
+}
+
+/* Keyframes zoom in – zoom out cho nút */
+@keyframes zoomBtn {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}

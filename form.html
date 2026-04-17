@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Frago - MVP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="content" style="background-color: white; text-align: left">
+    <div class="container scorllableContainer" style="background-color: white; color: #A30023;">
+      <div class="formPage">
+        <h1 style="margin-bottom: 5px;">Xin chào!</h1>
+        <h2 style="margin-top: 0;">Bắt đầu làm quen nhé👋</h2>
+        <p style="margin-top: 0;">Hãy cho mình biết một vài thông tin cơ bản về bạn để bắt đầu nhé.</p>
+
+        <div class="formGroup">
+          <label for="fullName">Họ và tên</label>
+          <input type="text" id="fullName" placeholder="Nhập họ và tên">
+        </div>
+
+        <div class="formGroup">
+          <label for="gender">Giới tính</label>
+          <select id="gender">
+            <option value="" hidden>Chọn giới tính</option>
+            <option value="male">Nam</option>
+            <option value="female">Nữ</option>
+            <option value="other">Khác</option>
+          </select>
+        </div>
+
+        <div class="formGroup">
+          <label for="birthday">Ngày sinh</label>
+          <input type="date" id="birthday">
+        </div>
+      </div>
+
+      <div class="formPage hidden">
+        <h2>Điều gì đưa bạn đến với Frago? 👀</h2>
+        <div class="info" style="display: flex; flex-direction: column; gap: 10px;">
+          <div class="optionGroup">
+            <button class="option" style="padding: 10px 20px;" onclick="ifUserSupplier(0)">Tôi đang tìm kiếm mô hình/đối tác phù hợp</button>
+            <button class="option" style="padding: 10px 20px;" onclick="ifUserSupplier(1)">Tôi là nhà cung cấp muốn hợp tác</button>
+          </div>  
+        </div>
+      </div>
+
+      <div class="formPage hidden">
+        <div class="formForUser">
+          <h2>Hãy chia sẻ một chút về bản thân bạn.</h2>
+
+          <div class="info" style="display: flex; flex-direction: column; gap: 10px;">
+            <strong>Khu vực bạn dự định kinh doanh?</strong>
+            <div class="optionGroup" id="introUserQues1">
+              <button class="option" value="north">Miền Bắc</button>
+              <button class="option" value="central">Miền Trung</button>
+              <button class="option" value="south">Miền Nam</button>
+            </div>
+            
+            <strong>Bạn có đang sinh sống tại khu vực dự định kinh doanh không?</strong>
+            <div class="optionGroup" id="introUserQues2">
+              <button class="option" value="living">Đang sinh sống tại đó</button>
+              <button class="option" value="worked">Từng sống / Làm việc tại đó</button>
+              <button class="option" value="interested">Chưa từng ở đó nhưng muốn tìm hiểu</button>
+            </div>
+
+            <strong>Trình độ học vấn của bạn là gì?</strong>
+            <div class="optionGroup" id="introUserQues3">
+              <button class="option" value="highschool">Trung học</button>
+              <button class="option" value="college">Cao đẳng / Đại học</button>
+              <button class="option" value="postgrad">Sau đại học</button>
+              <button class="option" value="selftaught">Tự học / Không có bằng cấp</button>
+            </div>
+
+            <strong>Nghề nghiệp hiện tại hoặc gần nhất</strong>
+            <div class="optionGroup" id="introUserQues4">
+              <button class="option" value="student">Sinh viên</button>
+              <button class="option" value="staff">Nhân viên</button>
+              <button class="option" value="manager">Quản lý</button>
+              <button class="option" value="owner">Chủ doanh nghiệp</button>
+              <button class="option" value="freelancer">Freelancer</button>
+              <button class="option" value="manual">Lao động phổ thông</button>
+            </div>
+
+            <strong>Bạn có thể dành bao nhiêu thời gian mỗi tuần cho việc kinh doanh?</strong>
+            <div class="optionGroup" id="introUserQues5">
+              <button class="option" value="fulltime">Toàn thời gian</button>
+              <button class="option" value="parttime">Bán thời gian (dưới 20 giờ/tuần)</button>
+              <button class="option" value="occasional">Khi có thời gian rảnh</button>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="formForSupplier hidden">
+          <h2>Hãy chia sẻ một chút về bạn và doanh nghiệp.</h2>
+
+          <div class="info" style="display: flex; flex-direction: column; gap: 10px;">
+
+            <strong>Quy mô hoạt động của bạn</strong>
+            <div class="optionGroup" id="introSupplierQues1">
+              <button class="option" value="individual">Cá nhân / Freelancer</button>
+              <button class="option" value="small">Nhà cung cấp nhỏ</button>
+              <button class="option" value="medium">Doanh nghiệp vừa</button>
+              <button class="option" value="large">Doanh nghiệp lớn</button>
+            </div>
+
+            <strong>Khu vực cung cấp</strong>
+            <div class="optionGroup multi" id="introSupplierQues2">
+              <button class="option" value="north">Miền Bắc</button>
+              <button class="option" value="central">Miền Trung</button>
+              <button class="option" value="south">Miền Nam</button>
+            </div>
+
+            <strong>Khả năng cung ứng</strong>
+            <div class="optionGroup" id="introSupplierQues3">
+              <button class="option" value="shortterm">Ngắn hạn / Theo dự án</button>
+              <button class="option" value="longterm">Dài hạn / Liên tục</button>
+              <button class="option" value="both">Cả hai</button>
+            </div>
+
+            <strong>Số năm kinh nghiệm trong lĩnh vực</strong>
+            <div class="optionGroup" id="introSupplierQues4">
+              <button class="option" value="lt1">Dưới 1 năm</button>
+              <button class="option" value="1-3">1 - 3 năm</button>
+              <button class="option" value="3-5">3 - 5 năm</button>
+              <button class="option" value="gt5">Trên 5 năm</button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="formPage hidden">
+        <div class="formForUser">
+          <h2>Để cá nhân hóa gợi ý, hãy cung cấp thêm thông tin về bản thân bạn.</h2>
+
+          <!-- Câu 1 -->
+          <strong>1. Mức vốn đầu tư ban đầu bạn sẵn sàng bỏ ra là bao nhiêu?</strong>
+          <div class="optionGroup" id="UserQues1">
+            <button class="option" value="under200">Dưới 200 triệu VNĐ</button>
+            <button class="option" value="200-500">200 – 500 triệu VNĐ</button>
+            <button class="option" value="500-1000">500 triệu – 1 tỷ VNĐ</button>
+            <button class="option" value="above1000">Trên 1 tỷ VNĐ</button>
+          </div>
+
+          <!-- Câu 2 -->
+          <strong>2. Bạn quan tâm đến lĩnh vực nào?</strong>
+          <div class="optionGroup multi" id="UserQues2">
+            <button class="option" value="food">🍔 Thực phẩm & Đồ uống</button>
+            <button class="option" value="fashion">👕 Thời trang</button>
+            <button class="option" value="beauty">💄 Mỹ phẩm & Làm đẹp</button>
+            <button class="option" value="fitness">🏋️‍♂️ Thể thao & Fitness</button>
+            <button class="option" value="education">📚 Giáo dục & Đào tạo</button>
+            <button class="option" value="home">🏠 Nội thất & Trang trí</button>
+            <button class="option" value="tech">💻 Công nghệ & Điện tử</button>
+            <button class="option" value="hotel">🏨 Khách sạn & Du lịch</button>
+            <button class="option" value="auto">🚗 Ô tô & Xe máy</button>
+            <button class="option" value="repair">🛠 Dịch vụ sửa chữa</button>
+            <button class="option" value="entertainment">🎮 Giải trí & Game</button>
+            <button class="option" value="logistics">📦 Logistics & Vận chuyển</button>
+            <button class="option" value="agriculture">🌱 Nông nghiệp & Sản phẩm xanh</button>
+            <button class="option" value="pet">🐾 Thú cưng & Dịch vụ thú y</button>
+            <button class="option" value="retail">🛒 Bán lẻ & Cửa hàng tiện lợi</button>
+            <button class="option" value="health">⚕️ Y tế & Chăm sóc sức khỏe</button>
+            <button class="option" value="office">💼 Dịch vụ văn phòng</button>
+            <button class="option" value="art">🎨 Nghệ thuật & Thủ công</button>
+          </div>
+
+          <!-- Câu 3 -->
+          <strong>3. Bạn muốn mô hình kinh doanh của mình hoạt động trong không gian nào?</strong>
+          <div class="optionGroup" id="UserQues3">
+            <button class="option" value="offline">Offline</button>
+            <button class="option" value="online">Online</button>
+            <button class="option" value="online-offline">Kết hợp Online + Offline</button>
+          </div>
+
+          <!-- Câu 4 -->
+          <strong>4. Thời gian bạn có thể dành để quản lý mô hình mỗi ngày?</strong>
+          <div class="optionGroup" id="UserQues4">
+            <button class="option" value="fulltime">Toàn thời gian</button>
+            <button class="option" value="parttime">Bán thời gian</button>
+            <button class="option" value="remote">Quản lý từ xa</button>
+          </div>
+
+          <!-- Câu 5 -->
+          <strong>5. Bạn mong muốn mức độ hỗ trợ từ thương hiệu nhượng quyền ra sao?</strong>
+          <div class="optionGroup" id="UserQues5">
+            <button class="option" value="full">Hỗ trợ toàn diện</button>
+            <button class="option" value="basic">Hỗ trợ cơ bản</button>
+            <button class="option" value="independent">Tự chủ nhiều</button>
+          </div>
+
+          <!-- Câu 6 -->
+          <strong>6. Bạn ưu tiên yếu tố nào nhất khi chọn franchise?</strong>
+          <div class="optionGroup" id="UserQues6">
+            <button class="option" value="profit">Lợi nhuận cao</button>
+            <button class="option" value="lowrisk">Ít rủi ro</button>
+            <button class="option" value="fastROI">Hoàn vốn nhanh</button>
+            <button class="option" value="creative">Tự do sáng tạo</button>
+            <button class="option" value="brand">Uy tín thương hiệu</button>
+          </div>
+
+          <!-- Câu 7 -->
+          <strong>7. Thị trường bạn muốn hướng tới chủ yếu là:</strong>
+          <div class="optionGroup" id="UserQues7">
+            <button class="option" value="residential">Khu dân cư</button>
+            <button class="option" value="tourism">Khu du lịch</button>
+            <button class="option" value="school-office">Khu trường học - văn phòng</button>
+            <button class="option" value="rural">Nông thôn</button>
+          </div>
+
+          <!-- Câu 8 -->
+          <strong>8. Bạn sẵn sàng ký hợp đồng nhượng quyền trong thời hạn bao lâu?</strong>
+          <div class="optionGroup" id="UserQues8">
+            <button class="option" value="under1">Dưới 1 năm</button>
+            <button class="option" value="1-3">1 – 3 năm</button>
+            <button class="option" value="3-5">3 – 5 năm</button>
+            <button class="option" value="above5">Trên 5 năm</button>
+          </div>
+        </div>
+
+        <div class="formForSupplier hidden">
+          <h2>Để cá nhân hóa gợi ý, hãy cung cấp thêm thông tin về bạn và doanh nghiệp.</h2>
+
+          <!-- Câu 1 -->
+          <strong>1. Bạn mong muốn đối tác có mức vốn tối thiểu là bao nhiêu?</strong>
+          <div class="optionGroup" id="SupplierQues1">
+            <button class="option" value="under200">Dưới 200 triệu VNĐ</button>
+            <button class="option" value="200-500">200 – 500 triệu VNĐ</button>
+            <button class="option" value="500-1000">500 triệu – 1 tỷ VNĐ</button>
+            <button class="option" value="above1000">Trên 1 tỷ VNĐ</button>
+          </div>
+
+          <!-- Câu 2 -->
+          <strong>2. Đối tác nên có kinh nghiệm trong lĩnh vực nào?</strong>
+          <div class="optionGroup multi" id="SupplierQues2">
+            <button class="option" value="food">🍔 Thực phẩm & Đồ uống</button>
+            <button class="option" value="fashion">👕 Thời trang</button>
+            <button class="option" value="beauty">💄 Mỹ phẩm & Làm đẹp</button>
+            <button class="option" value="fitness">🏋️‍♂️ Thể thao & Fitness</button>
+            <button class="option" value="education">📚 Giáo dục & Đào tạo</button>
+            <button class="option" value="home">🏠 Nội thất & Trang trí</button>
+            <button class="option" value="tech">💻 Công nghệ & Điện tử</button>
+            <button class="option" value="hotel">🏨 Khách sạn & Du lịch</button>
+            <button class="option" value="auto">🚗 Ô tô & Xe máy</button>
+            <button class="option" value="repair">🛠 Dịch vụ sửa chữa</button>
+            <button class="option" value="entertainment">🎮 Giải trí & Game</button>
+            <button class="option" value="logistics">📦 Logistics & Vận chuyển</button>
+            <button class="option" value="agriculture">🌱 Nông nghiệp & Sản phẩm xanh</button>
+            <button class="option" value="pet">🐾 Thú cưng & Dịch vụ thú y</button>
+            <button class="option" value="retail">🛒 Bán lẻ & Cửa hàng tiện lợi</button>
+            <button class="option" value="health">⚕️ Y tế & Chăm sóc sức khỏe</button>
+            <button class="option" value="office">💼 Dịch vụ văn phòng</button>
+            <button class="option" value="art">🎨 Nghệ thuật & Thủ công</button>
+          </div>
+
+          <!-- Câu 3 -->
+          <strong>3. Địa điểm kinh doanh mà bạn ưu tiên cho franchise là:</strong>
+          <div class="optionGroup" id="SupplierQues3">
+            <button class="option" value="residential">Khu dân cư</button>
+            <button class="option" value="tourism">Khu du lịch</button>
+            <button class="option" value="school-office">Khu trường học - văn phòng</button>
+            <button class="option" value="rural">Nông thôn</button>
+            <button class="option" value="no-limit">Không giới hạn</button>
+          </div>
+
+          <!-- Câu 4 -->
+          <strong>4. Mức độ cam kết quản lý trực tiếp của đối tác:</strong>
+          <div class="optionGroup" id="SupplierQues4">
+            <button class="option" value="fulltime">Toàn thời gian</button>
+            <button class="option" value="parttime">Bán thời gian</button>
+            <button class="option" value="remote">Quản lý từ xa</button>
+            <button class="option" value="none">Không yêu cầu</button>
+          </div>
+
+          <!-- Câu 5 -->
+          <strong>5. Yêu cầu kỹ năng của đối tác:</strong>
+          <div class="optionGroup multi" id="SupplierQues5">
+            <button class="option" value="hr">Quản lý nhân sự</button>
+            <button class="option" value="sales">Bán hàng & CSKH</button>
+            <button class="option" value="marketing">Marketing cơ bản</button>
+            <button class="option" value="none">Không yêu cầu</button>
+          </div>
+
+          <!-- Câu 6 -->
+          <strong>6. Mức phí nhượng quyền bạn muốn áp dụng cho đối tác:</strong>
+          <div class="optionGroup" id="SupplierQues6">
+            <button class="option" value="under50">Dưới 50 triệu VNĐ</button>
+            <button class="option" value="50-100">50 – 100 triệu VNĐ</button>
+            <button class="option" value="100-300">100 – 300 triệu VNĐ</button>
+            <button class="option" value="above300">Trên 300 triệu VNĐ</button>
+          </div>
+
+          <!-- Câu 7 -->
+          <strong>7. Thời gian hợp đồng nhượng quyền tối thiểu mà bạn yêu cầu:</strong>
+          <div class="optionGroup" id="SupplierQues7">
+            <button class="option" value="1">1 năm</button>
+            <button class="option" value="2-3">2 – 3 năm</button>
+            <button class="option" value="3-5">3 – 5 năm</button>
+            <button class="option" value="above5">Trên 5 năm</button>
+          </div>
+
+          <!-- Câu 8 -->
+          <strong>8. Bạn mong muốn đối tác thuộc nhóm nào?</strong>
+          <div class="optionGroup" id="SupplierQues8">
+            <button class="option" value="individual">Cá nhân</button>
+            <button class="option" value="household">Hộ kinh doanh</button>
+            <button class="option" value="sme">Doanh nghiệp vừa & nhỏ</button>
+            <button class="option" value="large">Doanh nghiệp lớn</button>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="formPage hidden">
+        <h2>Trước khi bắt đầu!</h2>
+        <p><strong>Hãy để chúng tôi gửi những cơ hội hợp tác phù hợp đến bạn.</strong><br>(Bạn có thể để trống nếu chỉ muốn nhận thông tin qua ứng dụng)</p>
+        <div class="formGroup">
+          <label for="email">Email của bạn</label>
+          <input type="email" id="email" placeholder="Nhập email tại đây">
+        </div>
+
+        <div class="formGroup">
+          <label for="phone">Số điện thoại</label>
+          <input type="tel" id="phone" placeholder="Nhập số điện thoại tại đây">
+        </div>
+      </div>
+
+    </div>
+    <nav class="bottom-nav">
+        <div class="formNavPage" style="width: 100%;">
+          <button class="back-btn" id="back-btn" onclick="goToPage('back')" style="visibility: hidden">Quay lại</button>
+          <button class="next-btn" id="next-btn" onclick="goToPage('next')">Tiếp tục</button>
+        </div>
+    </nav>
+  </div>  
+</body>
+<script src="script.js"></script>
+<script src="text-lib.js"></script>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Frago - MVP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="sectionstyle.css">
+</head>
+<body>
+  <div class="content">
+    <img src="assets/logo-mini.png" alt="Logo" class="logo-mini">
+    <div class="container">
+      <div class="Section-Profile-Container">
+        <div class="Section-Profile-List">
+          <!-- Edit Profile Section -->
+          <div class="Section-Profile-Edit">
+            <h5>Người dùng</h5>
+            <h2 style="color: #A30023;">Nguyễn Văn A</h2>
+            <div class="Section-Profile-FeatureCard">
+              <h3>Xem đầy đủ thông tin</h3>
+            </div>
+          </div>
+
+          <!-- Popular Features Section -->
+          <div class="Section-Profile-Features">
+            <h2>Tính năng nổi bật</h2>
+            <div class="Section-Profile-FeaturesGrid">
+              <div class="Section-Profile-FeatureCard">
+                <h3 onclick="window.location.href = 'premium.html';">Khám phá sản phẩm</h3>
+              </div>
+              <div class="Section-Profile-FeatureCard">
+                <h3>Thống kê <br>số liệu</h3>
+              </div>
+              <div class="Section-Profile-FeatureCard">
+                <h3>Kết nối <br>cộng đồng</h3>
+              </div>
+              <div class="Section-Profile-FeatureCard">
+                <h3>Hỗ trợ <br>pháp lý</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional Features Section (Single Column) -->
+          <div class="Section-Profile-AdditionalFeatures">
+            <div class="Section-Profile-FeatureCard" style="background-color: #355E3B;">
+              <h3 style=" color: white;">Thắc mắc và giải đáp</h3>
+            </div>
+            <div class="Section-Profile-FeatureCard" style="background-color: gray;">
+              <h3 style="color: white;">Cài đặt</h3>
+            </div>
+            <div class="Section-Profile-FeatureCard" style="background-color: #a30023;">
+              <h3 style="color: white;">Đăng xuất</h3>
+            </div>
+            <div style="visibility: hidden">nothing</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bottom-nav">
+      <div class="Choice active" value="profile"><a href="profile.html">
+      <div class="icon-container"><img src="assets/icon_profile.png" class="nav-icon" /></div>
+      </a></div>
+      <div class="Choice" value="discover"><a href="discover.html">
+      <div class="icon-container"><img src="assets/icon_discover.png" class="nav-icon" /></div>
+      </a></div>
+      <div class="Choice" value="home"><a href="home.html">
+      <div class="icon-container"><img src="assets/icon_home.png" class="nav-icon" /></div>
+      </a></div>
+      <div class="Choice" value="chat"><a href="chat.html">
+      <div class="icon-container"><img src="assets/icon_chat.png" class="nav-icon" /></div>
+      </a></div>
+      <div class="Choice" value="academy"><a href="academy.html">
+      <div class="icon-container"><img src="assets/icon_academy.png" class="nav-icon" /></div>
+      </a></div>
+  </div>  
+    </nav>
+  </div>  
+</body>
+<script src="script.js"></script>
+</html>
