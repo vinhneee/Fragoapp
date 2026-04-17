@@ -278,3 +278,20 @@
     .formGroup select:focus {
         border-color: #8b0020;
     }
+.Section-Profile-List {
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.profile-name {
+  min-height: 2rem;
+}

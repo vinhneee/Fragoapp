@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="sectionstyle.css">
+  <link rel="stylesheet" href="Dock.css">
 </head>
 <body>
   <div id="homeForUser" class="content hidden">
@@ -265,25 +266,6 @@
       </div>
 
     </div>
-
-    <!-- Navigation -->
-    <nav class="bottom-nav">
-      <div class="Choice" value="profile"><a href="profile.html">
-      <div class="icon-container"><img src="assets/icon_profile.png" class="nav-icon" /></div>
-      </a></div>
-      <div class="Choice" value="discover"><a href="discover.html">
-      <div class="icon-container"><img src="assets/icon_discover.png" class="nav-icon" /></div>
-      </a></div>
-      <div class="Choice active" value="home"><a href="home.html">
-      <div class="icon-container"><img src="assets/icon_home.png" class="nav-icon" /></div>
-      </a></div>
-      <div class="Choice" value="chat"><a href="chat.html">
-      <div class="icon-container"><img src="assets/icon_chat.png" class="nav-icon" /></div>
-      </a></div>
-      <div class="Choice" value="academy"><a href="academy.html">
-      <div class="icon-container"><img src="assets/icon_academy.png" class="nav-icon" /></div>
-      </a></div>
-    </nav>
   </div>  
   <div id="homeForSupplier" class="content hidden">
     <img src="assets/logo-mini.png" alt="Logo" class="logo-mini">
@@ -330,25 +312,69 @@
         <div style="visibility: hidden">nothing</div>
       </div>
     </div>
-    <!-- Navigation -->
-    <nav class="bottom-nav">
-      <div class="Choice" value="profile"><a href="profile.html">
-      <div class="icon-container"><img src="assets/icon_profile.png" class="nav-icon" /></div>
-      </a></div>
-      <div class="Choice" value="discover"><a href="discover.html">
-      <div class="icon-container"><img src="assets/icon_discover.png" class="nav-icon" /></div>
-      </a></div>
-      <div class="Choice active" value="home"><a href="home.html">
-      <div class="icon-container"><img src="assets/icon_home.png" class="nav-icon" /></div>
-      </a></div>
-      <div class="Choice" value="chat"><a href="chat.html">
-      <div class="icon-container"><img src="assets/icon_chat.png" class="nav-icon" /></div>
-      </a></div>
-      <div class="Choice" value="academy"><a href="academy.html">
-      <div class="icon-container"><img src="assets/icon_academy.png" class="nav-icon" /></div>
-      </a></div>
-    </nav>
   </div>
+  <div class="dock-outer" id="dockOuter">
+  <div class="dock-panel" id="dockPanel">
+    <div class="dock-item" data-page="profile">
+      <a href="profile.html" class="dock-link">
+        <div class="dock-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
+        <div class="dock-label">Profile</div>
+      </a>
+    </div>
+
+    <div class="dock-item" data-page="discover">
+      <a href="discover.html" class="dock-link">
+        <div class="dock-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+          </svg>
+        </div>
+        <div class="dock-label">Khám phá</div>
+      </a>
+    </div>
+
+    <div class="dock-item dock-item-center" data-page="home">
+      <a href="home.html" class="dock-link">
+        <div class="dock-icon dock-icon-center">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C10.5 2 9 2.5 8 3.5L6 5.5C5.5 6 5 6.5 5 7.5V9C5 10 5.5 11 6.5 11.5L8 13V17C8 18 8.5 19 9.5 19.5L11 21C11.5 21.5 12.5 21.5 13 21L14.5 19.5C15.5 19 16 18 16 17V13L17.5 11.5C18.5 11 19 10 19 9V7.5C19 6.5 18.5 6 18 5.5L16 3.5C15 2.5 13.5 2 12 2Z"/>
+          </svg>
+        </div>
+        <div class="dock-label">Frago</div>
+      </a>
+    </div>
+
+    <div class="dock-item" data-page="chat">
+      <a href="chat.html" class="dock-link">
+        <div class="dock-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+        </div>
+        <div class="dock-label">Chat</div>
+      </a>
+    </div>
+
+    <div class="dock-item" data-page="academy">
+      <a href="academy.html" class="dock-link">
+        <div class="dock-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg>
+        </div>
+        <div class="dock-label">Học tập</div>
+      </a>
+    </div>
+  </div>
+</div>
 </body>
 <script src="script.js"></script>
+<script src="Dock.js"></script>
 </html>

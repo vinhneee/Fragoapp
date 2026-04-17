@@ -233,3 +233,122 @@ window.onload = function () {
     document.getElementById("homeForUser").classList.toggle("hidden", option !== 0);
     document.getElementById("homeForSupplier").classList.toggle("hidden", option !== 1);
 }
+// Lấy các phần tử input và ảnh avatar
+const avatarInput = document.getElementById('avatarInput');
+const avatarImg = document.getElementById('avatarImg');
+// Khi người dùng chọn ảnh mới
+avatarInput.addEventListener('change', function(event) {
+  const file = event.target.files[0];
+  if (!file) return; // nếu không chọn file thì thoát
+  // Kiểm tra định dạng ảnh
+  if (!file.type.startsWith('image/')) {
+    alert('Vui lòng chọn file ảnh hợp lệ!');
+    return;
+  }
+  // Hiển thị ảnh trên trình duyệt ngay lập tức
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    avatarImg.src = e.target.result;
+    // Lưu ảnh vào localStorage để giữ khi reload trang
+    try {
+      localStorage.setItem('userAvatar', e.target.result);
+    } catch (error) {
+      console.warn('Không thể lưu avatar trong localStorage:', error);
+    }
+  }
+  reader.readAsDataURL(file);
+});
+// Load avatar từ localStorage khi mở trang
+window.addEventListener('load', function() {
+  const savedAvatar = localStorage.getItem('userAvatar');
+  if (savedAvatar) {
+    avatarImg.src = savedAvatar;
+  }
+});
+// LOAD NGAY KHI SCRIPT CHẠY - KHÔNG ĐỢI WINDOW.LOAD
+(function loadProfileDataImmediately() {
+  const fullName = localStorage.getItem('userFullName') || 'Nguyễn Văn A';
+  const birthDate = localStorage.getItem('userBirthDate');
+  
+  // Đợi DOM ready (nhanh hơn window.load)
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateProfile);
+  } else {
+    updateProfile();
+  }
+  
+  function updateProfile() {
+    // Update tên
+    const nameElements = document.querySelectorAll('.profile-name');
+    nameElements.forEach(el => el.textContent = fullName);
+    
+    // Update ngày sinh (nếu có)
+    if (birthDate) {
+      const dateParts = birthDate.split('-');
+      const formattedDate = `${dateParts[2]}/${dateParts[1]}/${dateParts[0]}`;
+      const birthdateElements = document.querySelectorAll('.profile-birthdate');
+      birthdateElements.forEach(el => el.textContent = formattedDate);
+    }
+    
+    // Update avatar
+    const savedAvatar = localStorage.getItem('userAvatar');
+    const avatarImg = document.getElementById('avatarImg');
+    if (savedAvatar && avatarImg) {
+      avatarImg.src = savedAvatar;
+    }
+  }
+  if (birthDate) {
+    const dateParts = birthDate.split('-'); // yyyy-mm-dd
+    const formattedDate = `${dateParts[2]}/${dateParts[1]}/${dateParts[0]}`;
+
+    const birthdateElements = document.querySelectorAll('.profile-birthdate');
+    birthdateElements.forEach(el => (el.textContent = formattedDate));
+  }
+});
+// Load profile data từ localStorage
+(function loadProfileData() {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateProfileData);
+  } else {
+    updateProfileData();
+  }
+  
+  function updateProfileData() {
+    // Load tên
+    const fullName = localStorage.getItem('userFullName');
+    if (fullName) {
+      const nameElements = document.querySelectorAll('.profile-name');
+      nameElements.forEach(el => el.textContent = fullName);
+    }
+    
+    // Load ngày sinh
+    const birthDate = localStorage.getItem('userBirthDate');
+    if (birthDate) {
+      const dateParts = birthDate.split('-');
+      const formattedDate = `${dateParts[2]}/${dateParts[1]}/${dateParts[0]}`;
+      const birthdateElements = document.querySelectorAll('.profile-birthdate');
+      birthdateElements.forEach(el => el.textContent = formattedDate);
+    }
+    
+    // Load avatar
+    const savedAvatar = localStorage.getItem('userAvatar');
+    const avatarImg = document.getElementById('avatarImg');
+    if (savedAvatar && avatarImg) {
+      avatarImg.src = savedAvatar;
+    }
+    
+    // Load email
+    const email = localStorage.getItem('userEmail');
+    if (email) {
+      const emailElements = document.querySelectorAll('.profile-email');
+      emailElements.forEach(el => el.textContent = email);
+    }
+    
+    // Load phone
+    const phone = localStorage.getItem('userPhone');
+    if (phone) {
+      const phoneElements = document.querySelectorAll('.profile-phone');
+      phoneElements.forEach(el => el.textContent = phone);
+    }
+  }
+})();

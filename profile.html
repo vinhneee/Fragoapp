@@ -1,28 +1,187 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Frago - MVP</title>
+  <title>Frago - Profile</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="sectionstyle.css">
+  <link rel="stylesheet" href="Dock.css">
 </head>
 <body>
   <div class="content">
-    <img src="assets/logo-mini.png" alt="Logo" class="logo-mini">
+    <img src="assets/logo-mini.png" alt="Frago logo representing the franchise platform brand" class="logo-mini">
+    
     <div class="container">
       <div class="Section-Profile-Container">
         <div class="Section-Profile-List">
-          <!-- Edit Profile Section -->
-          <div class="Section-Profile-Edit">
-            <h5>Người dùng</h5>
-            <h2 style="color: #A30023;">Nguyễn Văn A</h2>
-            <div class="Section-Profile-FeatureCard">
-              <h3>Xem đầy đủ thông tin</h3>
+          
+          <!-- Profile Header -->
+          <div class="Section-Profile-Header">
+            <div class="Section-Profile-Avatar">
+              <img id="avatarImg" 
+                   src="https://placehold.co/120x120?text=Avatar" 
+                   alt="Profile avatar of user showing professional headshot" 
+                   class="avatar-img" />
+              <label for="avatarInput" class="avatar-upload-label">
+                <span>Thay ảnh đại diện</span>
+              </label>
+              <input type="file" id="avatarInput" accept="image/*" />
+            </div>
+            <div class="Section-Profile-Status">
+              <span>Đang tìm kiếm</span>
+            </div>
+            <div class="Section-Profile-BasicInfo">
+              <h2 class="profile-name">Nguyễn Văn A</h2>
+              <p class="profile-title">Nhà Đầu Tư | Doanh Nhân</p>
+              <p class="profile-location">TP. Hồ Chí Minh, Việt Nam</p>
+              <div class="profile-stats">
+                <span><strong>25</strong> lượt xem</span>
+                <span><strong>8</strong> kết nối</span>
+                <span><strong>92%</strong> hoàn thiện</span>
+              </div>
             </div>
           </div>
 
-          <!-- Popular Features Section -->
+          <!-- About -->
+          <div class="Section-Profile-Card">
+            <h3>Giới thiệu</h3>
+            <p class="profile-about">
+              Doanh nhân trẻ với 5 năm kinh nghiệm trong lĩnh vực F&B và bán lẻ. 
+              Đang tìm kiếm cơ hội nhượng quyền phù hợp để mở rộng kinh doanh tại khu vực miền Nam. 
+              Có kinh nghiệm quản lý đội ngũ 20+ nhân viên và am hiểu về vận hành chuỗi cửa hàng.
+            </p>
+          </div>
+
+          <!-- Investment Profile -->
+          <div class="Section-Profile-Card">
+            <h3>Hồ sơ đầu tư</h3>
+            <div class="profile-detail-grid">
+              <div class="detail-item">
+                <span class="detail-label">Vốn đầu tư</span>
+                <span class="detail-value">500 triệu - 1 tỷ VNĐ</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Khu vực quan tâm</span>
+                <span class="detail-value">Miền Nam</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Ngành nghề</span>
+                <span class="detail-value">Thực phẩm & Đồ uống, Bán lẻ</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Thời gian cam kết</span>
+                <span class="detail-value">Toàn thời gian</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Mô hình mong muốn</span>
+                <span class="detail-value">Kết hợp Online + Offline</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Thời hạn hợp đồng</span>
+                <span class="detail-value">3 - 5 năm</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience -->
+          <div class="Section-Profile-Card">
+            <h3>Kinh nghiệm</h3>
+            <div class="profile-experience">
+              <div class="experience-item">
+                <div class="experience-icon">
+                  <img src="https://placehold.co/48x48?text=Work" alt="Work experience icon showing professional achievement in retail management" />
+                </div>
+                <div class="experience-content">
+                  <h4>Quản lý Cửa hàng</h4>
+                  <p class="company">ABC Retail Chain</p>
+                  <p class="duration">2020 - Hiện tại • 4 năm</p>
+                  <p class="description">Quản lý vận hành 3 cửa hàng bán lẻ với doanh thu 2 tỷ/tháng. 
+                  Xây dựng đội ngũ 25 nhân viên và tăng trưởng 40% năm 2023.</p>
+                </div>
+              </div>
+              <div class="experience-item">
+                <div class="experience-icon">
+                  <img src="https://placehold.co/48x48?text=Work" alt="Previous work experience icon showing career progression in food and beverage industry" />
+                </div>
+                <div class="experience-content">
+                  <h4>Trợ lý Kinh doanh</h4>
+                  <p class="company">XYZ Food & Beverage</p>
+                  <p class="duration">2018 - 2020 • 2 năm</p>
+                  <p class="description">Hỗ trợ phát triển chiến lược mở rộng chuỗi nhà hàng. 
+                  Tham gia đàm phán và ký kết 5 hợp đồng nhượng quyền thành công.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Education -->
+          <div class="Section-Profile-Card">
+            <h3>Học vấn</h3>
+            <div class="profile-education">
+              <div class="education-item">
+                <div class="education-icon">
+                  <img src="https://placehold.co/48x48?text=Education" alt="Education icon representing academic achievement in business administration" />
+                </div>
+                <div class="education-content">
+                  <h4>Đại học Kinh tế TP.HCM</h4>
+                  <p class="degree">Cử nhân Quản trị Kinh doanh</p>
+                  <p class="duration">2014 - 2018</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skills -->
+          <div class="Section-Profile-Card">
+            <h3>Kỹ năng</h3>
+            <div class="profile-skills">
+              <span class="skill-tag">Quản lý Vận hành</span>
+              <span class="skill-tag">Quản lý Nhân sự</span>
+              <span class="skill-tag">Bán hàng & CSKH</span>
+              <span class="skill-tag">Marketing cơ bản</span>
+              <span class="skill-tag">Quản lý Tài chính</span>
+              <span class="skill-tag">Đàm phán</span>
+            </div>
+          </div>
+
+          <!-- Preferences -->
+          <div class="Section-Profile-Card">
+            <h3>Ưu tiên khi chọn franchise</h3>
+            <div class="profile-preferences">
+              <div class="preference-item">
+                <span class="preference-icon">⭐</span>
+                <span>Uy tín thương hiệu</span>
+              </div>
+              <div class="preference-item">
+                <span class="preference-icon">💰</span>
+                <span>Hoàn vốn nhanh</span>
+              </div>
+              <div class="preference-item">
+                <span class="preference-icon">🤝</span>
+                <span>Hỗ trợ toàn diện</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact -->
+          <div class="Section-Profile-Card">
+            <h3>Thông tin liên hệ</h3>
+            <div class="profile-contact">
+              <div class="contact-item">
+                <span class="contact-icon">📧</span>
+                <span>nguyenvana@email.com</span>
+                <span class="verified-badge">✓ Đã xác minh</span>
+              </div>
+              <div class="contact-item">
+                <span class="contact-icon">📱</span>
+                <span>0901 234 567</span>
+                <span class="verified-badge">✓ Đã xác minh</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Features -->
           <div class="Section-Profile-Features">
             <h2>Tính năng nổi bật</h2>
             <div class="Section-Profile-FeaturesGrid">
@@ -41,10 +200,10 @@
             </div>
           </div>
 
-          <!-- Additional Features Section (Single Column) -->
+          <!-- Additional Features -->
           <div class="Section-Profile-AdditionalFeatures">
             <div class="Section-Profile-FeatureCard" style="background-color: #355E3B;">
-              <h3 style=" color: white;">Thắc mắc và giải đáp</h3>
+              <h3 style="color: white;">Thắc mắc và giải đáp</h3>
             </div>
             <div class="Section-Profile-FeatureCard" style="background-color: gray;">
               <h3 style="color: white;">Cài đặt</h3>
@@ -52,32 +211,94 @@
             <div class="Section-Profile-FeatureCard" style="background-color: #a30023;">
               <h3 style="color: white;">Đăng xuất</h3>
             </div>
-            <div style="visibility: hidden">nothing</div>
           </div>
+
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Navigation -->
-    <nav class="bottom-nav">
-      <div class="Choice active" value="profile"><a href="profile.html">
-      <div class="icon-container"><img src="assets/icon_profile.png" class="nav-icon" /></div>
-      </a></div>
-      <div class="Choice" value="discover"><a href="discover.html">
-      <div class="icon-container"><img src="assets/icon_discover.png" class="nav-icon" /></div>
-      </a></div>
-      <div class="Choice" value="home"><a href="home.html">
-      <div class="icon-container"><img src="assets/icon_home.png" class="nav-icon" /></div>
-      </a></div>
-      <div class="Choice" value="chat"><a href="chat.html">
-      <div class="icon-container"><img src="assets/icon_chat.png" class="nav-icon" /></div>
-      </a></div>
-      <div class="Choice" value="academy"><a href="academy.html">
-      <div class="icon-container"><img src="assets/icon_academy.png" class="nav-icon" /></div>
-      </a></div>
-  </div>  
-    </nav>
-  </div>  
+  <!-- DOCK NAVIGATION - CHỈ MỘT ĐOẠN DUY NHẤT -->
+  <div class="dock-outer" id="dockOuter">
+    <div class="dock-panel" id="dockPanel">
+      <div class="dock-item" data-page="profile">
+        <a href="profile.html" class="dock-link">
+          <div class="dock-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <div class="dock-label">Profile</div>
+        </a>
+      </div>
+
+      <div class="dock-item" data-page="discover">
+        <a href="discover.html" class="dock-link">
+          <div class="dock-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+            </svg>
+          </div>
+          <div class="dock-label">Khám phá</div>
+        </a>
+      </div>
+
+      <div class="dock-item dock-item-center" data-page="home">
+        <a href="home.html" class="dock-link">
+          <div class="dock-icon dock-icon-center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C10.5 2 9 2.5 8 3.5L6 5.5C5.5 6 5 6.5 5 7.5V9C5 10 5.5 11 6.5 11.5L8 13V17C8 18 8.5 19 9.5 19.5L11 21C11.5 21.5 12.5 21.5 13 21L14.5 19.5C15.5 19 16 18 16 17V13L17.5 11.5C18.5 11 19 10 19 9V7.5C19 6.5 18.5 6 18 5.5L16 3.5C15 2.5 13.5 2 12 2Z"/>
+            </svg>
+          </div>
+          <div class="dock-label">Frago</div>
+        </a>
+      </div>
+
+      <div class="dock-item" data-page="chat">
+        <a href="chat.html" class="dock-link">
+          <div class="dock-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </div>
+          <div class="dock-label">Chat</div>
+        </a>
+      </div>
+
+      <div class="dock-item" data-page="academy">
+        <a href="academy.html" class="dock-link">
+          <div class="dock-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+          </div>
+          <div class="dock-label">Học tập</div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="Dock.js"></script>
 </body>
-<script src="script.js"></script>
+<body class="page-profile"></body>
+<div class="particles-background" id="particlesBackground"></div>
+
+<script>
+// Tạo particles động
+const particlesContainer = document.getElementById('particlesBackground');
+if (particlesContainer) {
+  for (let i = 0; i < 20; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    particle.style.left = Math.random() * 100 + '%';
+    particle.style.animationDelay = Math.random() * 10 + 's';
+    particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+    particlesContainer.appendChild(particle);
+  }
+}
+</script>
 </html>

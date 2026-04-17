@@ -1,4 +1,4 @@
-// ================= DỮ LIỆU FRANCHISE =================
+
 const formQuestion = {
     user: {
         questions: [
